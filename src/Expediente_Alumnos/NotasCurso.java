@@ -17,7 +17,7 @@ public class NotasCurso {
         this.estapaEducativa = estapaEducativa;
         this.nombreCiclo = nombreCiclo;
         this.curso = curso;
-        this.notas = notas;
+        this.notas = new HashMap<>();
         this.anio = anio;
     }
     //GETTERS AND SETTERS
@@ -101,8 +101,31 @@ public class NotasCurso {
     public void deleteNota(String asignatura){
         this.notas.remove(asignatura);
     }
-    public Double buscar(String asignatura){
-        Double nota = this.notas.keySet().stream()
 
+    /**
+     * This method returns grade from subject.
+     * @param asignatura name of the subject.
+     * @return grade Double.
+     */
+    public Double buscar(String asignatura){
+        return this.notas.get(asignatura);
     }
+
+    /**
+     * This method returns a String based on asignatura and nota.
+     * @return String.
+     */
+    public String pintar(){
+        StringBuffer sb = new StringBuffer();
+        this.notas.keySet().stream()
+                .sorted((asignatura1,asignatura2) -> asignatura1.compareTo(asignatura2))
+                .forEach(asignatura -> {
+                    sb.append(asignatura);
+                    sb.append(" = ");
+                    sb.append(this.notas.get(asignatura));
+                    sb.append("\n");
+                });
+        return sb.toString();
+    }
+
 }
