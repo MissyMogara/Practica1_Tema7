@@ -73,18 +73,20 @@ public class EquipoBasket implements Comparable<EquipoBasket>{
      * @param dorsal number of every player.
      * @return object player
      */
-    public JugadorBasket buscarJugador(int dorsal){
+    public JugadorBasket buscarJugador(Integer dorsal){
         //Arraylist from which we are going to search
-        List<JugadorBasket> jugadoresBasket = new ArrayList<>(jugadores);
+        List<JugadorBasket> jugadoresBasket = new ArrayList<>(this.jugadores);
+
         //Order the arraylist
         //We need a class with comparable interface for order
-        Collections.sort(jugadoresBasket);
+        Collections.sort(jugadoresBasket, ((o1, o2) -> o1.getDorsal().compareTo(o2.getDorsal())));
         //Player what we are going to search
         JugadorBasket jugadorABuscar = new JugadorBasket();
         jugadorABuscar.setDorsal(dorsal);
         //Now we can search for that player
         //Return the player
-        return jugadoresBasket.get(Collections.binarySearch(jugadoresBasket, jugadorABuscar));
+        return jugadoresBasket.get(Collections.binarySearch(jugadoresBasket, jugadorABuscar,
+                (o1,o2) -> o1.getDorsal().compareTo(o2.getDorsal())));
     }
 
     /**

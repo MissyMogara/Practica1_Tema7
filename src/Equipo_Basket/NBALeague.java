@@ -75,4 +75,18 @@ public class NBALeague {
                 .orElseGet(null); // Pick the tallest player or null if not present
         return alto;
     }
+
+    /**
+     * This method returns the team with more victories.
+     * @param team Map with all the players.
+     * @return team.
+     */
+    public EquipoBasket buscarEquipoPartidosGanador(Map<String, EquipoBasket> team){
+        Set<String> teams = team.keySet();
+        EquipoBasket ganador = teams.stream()
+                .map( equipo -> team.get(equipo))
+                .max((equipo1,equipo2) -> equipo1.getPartidosGanados().compareTo(equipo2.getPartidosGanados()))
+                .orElseGet(null);
+        return ganador;
+    }
 }
