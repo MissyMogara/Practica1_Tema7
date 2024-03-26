@@ -28,10 +28,10 @@ public class Test {
         exp1.addNotas(nota1);
         /* -------------- */
         Expediente exp2 = new Expediente(aura,true);
-        exp1.addNotas(nota2);
+        exp2.addNotas(nota2);
         /* -------------- */
         Expediente exp3 = new Expediente(elysia,true);
-        exp1.addNotas(nota3);
+        exp3.addNotas(nota3);
         //School
         CentroEducativo centroEducativo = new CentroEducativo("Midwich","Silent Hills",
                 "Localidad",982573015L,"pyramid@gmail.com");
@@ -39,6 +39,6 @@ public class Test {
         centroEducativo.addExpediente(exp2);
         centroEducativo.addExpediente(exp3);
         //TEST
-        System.out.println(centroEducativo.buscarExpediente("23095818M"));
+        System.out.println(centroEducativo.buscarExpediente("13245518A"));
     }
 }
