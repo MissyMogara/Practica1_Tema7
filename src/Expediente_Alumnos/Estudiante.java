@@ -5,17 +5,17 @@ import java.util.Objects;
 
 public class Estudiante {
     //PROPERTIES
-    private Integer dni;
+    private String dni;
     private String nombre;
     private String apellidos;
     private LocalDate fnacimiento;
     private String direccion;
     private String email;
     private String localidad;
-    private Integer telefono;
+    private Long telefono;
     //CONSTRUCTOR
-    public Estudiante(Integer dni, String nombre, String apellidos, LocalDate fnacimiento, String direccion,
-                      String email, String localidad, Integer telefono) {
+    public Estudiante(String dni, String nombre, String apellidos, LocalDate fnacimiento, String direccion,
+                      String email, String localidad, Long telefono) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -27,11 +27,11 @@ public class Estudiante {
     }
     //GETTER AND SETTERS
 
-    public Integer getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(Integer dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
@@ -83,11 +83,11 @@ public class Estudiante {
         this.localidad = localidad;
     }
 
-    public Integer getTelefono() {
+    public Long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
     //TO STRING

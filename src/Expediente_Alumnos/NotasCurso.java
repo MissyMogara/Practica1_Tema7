@@ -6,13 +6,13 @@ import java.util.Objects;
 
 public class NotasCurso {
     //PROPERTIES
-    public Estapa_Educativa estapaEducativa;
+    public EtapaEducativa estapaEducativa;
     private String nombreCiclo;
     public Curso curso;
     private HashMap<String,Double> notas; //Subject and grade
     private LocalDate anio;
     //CONSTRUTOR
-    public NotasCurso(Estapa_Educativa estapaEducativa, String nombreCiclo, Curso curso, HashMap<String, Double> notas,
+    public NotasCurso(EtapaEducativa estapaEducativa, String nombreCiclo, Curso curso,
                       LocalDate anio) {
         this.estapaEducativa = estapaEducativa;
         this.nombreCiclo = nombreCiclo;
@@ -22,11 +22,11 @@ public class NotasCurso {
     }
     //GETTERS AND SETTERS
 
-    public Estapa_Educativa getEstapaEducativa() {
+    public EtapaEducativa getEstapaEducativa() {
         return estapaEducativa;
     }
 
-    public void setEstapaEducativa(Estapa_Educativa estapaEducativa) {
+    public void setEstapaEducativa(EtapaEducativa estapaEducativa) {
         this.estapaEducativa = estapaEducativa;
     }
 

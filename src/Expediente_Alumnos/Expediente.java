@@ -58,4 +58,33 @@ public class Expediente {
     public int hashCode() {
         return Objects.hash(estudiante);
     }
+    //METHODS
+
+    /**
+     * This method adds NotasCurso to notas.
+     * @param nc object.
+     */
+    public void addNotas(NotasCurso nc){
+        this.notas.add(nc);
+    }
+
+    /**
+     * Show all the notas from a student.
+     * @param curso Curso.
+     * @param etapa EtapaEducativa.
+     * @return
+     */
+    public String mostrarNotas(Curso curso, EtapaEducativa etapa){
+        StringBuilder sb = new StringBuilder();
+
+        this.notas.stream()
+                .filter(tipoEtapa -> tipoEtapa.getEstapaEducativa().equals(etapa))
+                .filter(cursoStream -> cursoStream.getCurso().equals(curso))
+                .forEach(nota -> {
+                    sb.append(nota.pintar());
+                    sb.append("\n");
+                });
+        return sb.toString();
+
+    }
 }
